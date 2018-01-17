@@ -1,0 +1,85 @@
+﻿<Page x:Class="MyBookStore.View.ProductDetails"
+      xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+      xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+      xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+      xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+      xmlns:local="clr-namespace:MyBookStore.View"
+      mc:Ignorable="d" 
+      d:DesignHeight="650" d:DesignWidth="1150"
+      Title="ProductDetails">
+
+    <Grid Background="White">
+        <Image Source="../Images/staff-bg.jpg"/>
+
+        <Grid Height="550" Width="1000">
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="400"></ColumnDefinition>
+                <ColumnDefinition></ColumnDefinition>
+            </Grid.ColumnDefinitions>
+            <Grid.RowDefinitions>
+                <RowDefinition Height="80"></RowDefinition>
+                <RowDefinition></RowDefinition>
+            </Grid.RowDefinitions>
+
+            <TextBlock x:Name="ProductNameBlock" Grid.Row="0" Grid.ColumnSpan="2" HorizontalAlignment="Center" VerticalAlignment="Center" FontSize="35"></TextBlock>
+
+            <Image x:Name="ProductImage" Grid.Row="1" Grid.Column="0" Margin="90,30,90,110"></Image>
+
+            <Grid Grid.Row="1" Column="1" Margin="55,55,25,85" x:Name="GridBox">
+                <Grid.RowDefinitions>
+                    <RowDefinition></RowDefinition>
+                    <RowDefinition></RowDefinition>
+                    <RowDefinition></RowDefinition>
+                    <RowDefinition></RowDefinition>
+                    <RowDefinition></RowDefinition>
+                    <RowDefinition></RowDefinition>
+                    <RowDefinition></RowDefinition>
+                </Grid.RowDefinitions>
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition></ColumnDefinition>
+                    <ColumnDefinition></ColumnDefinition>
+                </Grid.ColumnDefinitions>
+
+                <Label Grid.Row="0" Grid.Column="0" Content="Автор:" FontSize="20" Foreground="#3B4251" HorizontalAlignment="Right" VerticalAlignment="Center" Margin="0,0,20,0"/>
+                <TextBlock Grid.Row="0" Grid.Column="1" x:Name="ProductAuthorBlock" Height="25" Width="250" FontSize="20" Foreground="#3B4251" TextAlignment="Left" HorizontalAlignment="Left"/>
+
+                <Label Grid.Row="1" Grid.Column="0" Content="ISBN:" FontSize="20" Foreground="#3B4251" HorizontalAlignment="Right" VerticalAlignment="Center" Margin="0,0,20,0"/>
+                <TextBlock Grid.Row="1" Grid.Column="1" x:Name="ProductIsbnBlock" Height="25" Width="250" FontSize="20" Foreground="#3B4251" TextAlignment="Left" HorizontalAlignment="Left"/>
+
+                <Label Grid.Row="2" Grid.Column="0" Content="Издательство:" FontSize="20" Foreground="#3B4251" HorizontalAlignment="Right" VerticalAlignment="Center" Margin="0,0,20,0"/>
+                <TextBlock Grid.Row="2" Grid.Column="1" x:Name="ProductPublisherBlock" Height="25" Width="250" FontSize="20" Foreground="#3B4251" TextAlignment="Left" HorizontalAlignment="Left" />
+
+                <Label Grid.Row="3" Grid.Column="0" Content="Год издания:" FontSize="20" Foreground="#3B4251" HorizontalAlignment="Right" VerticalAlignment="Center" Margin="0,0,20,0"/>
+                <TextBlock Grid.Row="3" Grid.Column="1" x:Name="ProductEditionBlock" Height="25" Width="250" FontSize="20" Foreground="#3B4251" TextAlignment="Left" HorizontalAlignment="Left" />
+
+                <Label Grid.Row="4" Grid.Column="0" Content="Стр:" FontSize="20" Foreground="#3B4251" HorizontalAlignment="Right" VerticalAlignment="Center" Margin="0,0,20,0"/>
+                <TextBlock Grid.Row="4" Grid.Column="1" x:Name="ProductPageBlock" Height="25" Width="250" FontSize="20" Foreground="#3B4251" TextAlignment="Left" HorizontalAlignment="Left"/>
+
+                <Label Grid.Row="5" Grid.Column="0" x:Name="ProductPrice" Content="Цена:" FontSize="20" Foreground="#3B4251" HorizontalAlignment="Right" VerticalAlignment="Center" Margin="0,0,20,0"/>
+                <TextBlock Grid.Row="5" Grid.Column="1" x:Name="ProductPriceBlock" Height="25" Width="250" FontSize="20" Foreground="#3B4251" TextAlignment="Left" HorizontalAlignment="Left" />
+
+
+                <Button x:Name="BtnAddToCart" Grid.Row="6" Grid.Column="0" Grid.ColumnSpan="2" 
+                        Height="35" Width="120" Cursor="Hand" Click="BtnAddToCart_OnClick">
+                    <Button.Template>
+                        <ControlTemplate>
+                            <Border x:Name="BtnBorder" CornerRadius="7" Background="#A62749">
+                                <ContentControl x:Name="Control"
+                                                Content="В Корзину"
+                                                Foreground="White"
+                                                VerticalAlignment="Center"
+                                                HorizontalAlignment="Center"
+                                                FontSize="15"/>
+                            </Border>
+                            <ControlTemplate.Triggers>
+                                <Trigger Property="IsMouseOver" Value="True">
+                                    <Setter TargetName="BtnBorder" Property="Background" Value="#531424"/>
+                                </Trigger>
+                            </ControlTemplate.Triggers>
+                        </ControlTemplate>
+                    </Button.Template>
+                </Button>
+            </Grid>
+        </Grid>
+    </Grid>
+</Page>

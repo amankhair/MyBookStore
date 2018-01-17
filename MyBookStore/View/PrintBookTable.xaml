@@ -1,0 +1,128 @@
+﻿<Page x:Class="MyBookStore.View.PrintBookTable"
+      xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+      xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+      xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+      xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+      xmlns:local="clr-namespace:MyBookStore.View"
+      mc:Ignorable="d" 
+      d:DesignHeight="620" d:DesignWidth="1150"
+      Title="PrintBookTable">
+
+    <Grid>
+
+        <Grid Background="Gray">
+            <Grid.RowDefinitions>
+                <RowDefinition Height="250"></RowDefinition>
+                <RowDefinition></RowDefinition>
+            </Grid.RowDefinitions>
+
+            <Grid Grid.Row="0" Margin="10">
+                <ListView x:Name="BookTableList">
+                    <ListView.View>
+                        <GridView>
+                            <GridView.Columns>
+                                <GridViewColumn Header="ID" Width="50" DisplayMemberBinding="{Binding Path=b_id}"/>
+                                <GridViewColumn Header="Название" Width="100" DisplayMemberBinding="{Binding Path=b_nm}"/>
+                                <GridViewColumn Header="Подкатегория" Width="150" DisplayMemberBinding="{Binding Path=b_subcat}"/>
+                                <GridViewColumn Header="Описание" Width="180" DisplayMemberBinding="{Binding Path=b_desc}"/>
+
+                                <GridViewColumn Header="Издатель" Width="100" DisplayMemberBinding="{Binding Path=b_publisher}"/>
+                                <GridViewColumn Header="Год издания" Width="100" DisplayMemberBinding="{Binding Path=b_edition}"/>
+                                <GridViewColumn Header="ISBN" Width="80" DisplayMemberBinding="{Binding Path=b_isbn}"/>
+                                <GridViewColumn Header="Стр" Width="50" DisplayMemberBinding="{Binding Path=b_page}"/>
+                                <GridViewColumn Header="Цена" Width="70" DisplayMemberBinding="{Binding Path=b_price}"/>
+
+                                <GridViewColumn Header="Изображение" Width="90" DisplayMemberBinding="{Binding Path=b_img}"/>
+                                <GridViewColumn Header="PDF" Width="50" DisplayMemberBinding="{Binding Path=b_pdf}"/>
+                                <GridViewColumn Header="Автор" Width="100" DisplayMemberBinding="{Binding Path=b_author}"/>
+                            </GridView.Columns>
+                        </GridView>
+                    </ListView.View>
+                </ListView>
+            </Grid>
+
+            <Grid Grid.Row="1" DataContext="{Binding ElementName=BookTableList, Path=SelectedItem}">
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="390"></ColumnDefinition>
+                    <ColumnDefinition></ColumnDefinition>
+                    <ColumnDefinition></ColumnDefinition>
+                </Grid.ColumnDefinitions>
+
+                <Grid Grid.Column="0">
+                    <Grid.RowDefinitions>
+                        <RowDefinition Height="35"></RowDefinition>
+                        <RowDefinition></RowDefinition>
+                    </Grid.RowDefinitions>
+
+                    <Label Margin="15,0,0,0" FontSize="18" VerticalAlignment="Top" Foreground="White">Описание</Label>
+                    <TextBox x:Name="BookDescriptionBox" Grid.Row="1" Margin="15,10,7.5,35" TextWrapping="Wrap" VerticalScrollBarVisibility="Visible" Text="{Binding Path=b_desc}"/>
+                </Grid>
+
+                <Grid Grid.Column="1" >
+                    <Grid.RowDefinitions>
+                        <RowDefinition></RowDefinition>
+                        <RowDefinition></RowDefinition>
+                        <RowDefinition></RowDefinition>
+                        <RowDefinition></RowDefinition>
+                        <RowDefinition></RowDefinition>
+                        <RowDefinition></RowDefinition>
+                    </Grid.RowDefinitions>
+
+                    <Label Grid.Row="0" Margin="15,0,0,0" FontSize="18" Foreground="White" VerticalAlignment="Top">ID</Label>
+                    <TextBox Grid.Row="0" x:Name="BookIdBox" Height="35" Width="230" VerticalContentAlignment="Center" HorizontalAlignment="Right" VerticalAlignment="Top" Margin="0,0,10,0" Text="{Binding Path=b_id}"/>
+
+                    <Label Grid.Row="1" Margin="15,0,0,0" FontSize="18" Foreground="White" VerticalAlignment="Top">Название</Label>
+                    <TextBox Grid.Row="1" x:Name="BookNameBox" Height="35" Width="230" VerticalContentAlignment="Center" HorizontalAlignment="Right" VerticalAlignment="Top" Margin="0,0,10,0" Text="{Binding Path=b_nm}"/>
+
+                    <Label Grid.Row="2" Margin="15,0,0,0" FontSize="18" Foreground="White" VerticalAlignment="Top">Автор</Label>
+                    <TextBox Grid.Row="2" x:Name="BookAuthorBox" Height="35" Width="230" VerticalContentAlignment="Center" HorizontalAlignment="Right" VerticalAlignment="Top" Margin="0,0,10,0" Text="{Binding Path=b_author}"/>
+
+                    <Label Grid.Row="3" Margin="15,0,0,0" FontSize="18" Foreground="White" VerticalAlignment="Top">Подкатегория</Label>
+                    <TextBox Grid.Row="3" x:Name="BookSubСatBox" Height="35" Width="230" VerticalContentAlignment="Center" HorizontalAlignment="Right" VerticalAlignment="Top" Margin="0,0,10,0" Text="{Binding Path=b_subcat}"/>
+
+                    <Label Grid.Row="4" Margin="15,0,0,0" FontSize="18" Foreground="White" VerticalAlignment="Top">Год издания</Label>
+                    <TextBox Grid.Row="4" x:Name="BookEditionBox" Height="35" Width="230" VerticalContentAlignment="Center" HorizontalAlignment="Right" VerticalAlignment="Top" Margin="0,0,10,0" Text="{Binding Path=b_edition}"/>
+
+                    <Label Grid.Row="5" Margin="15,0,0,0" FontSize="18" Foreground="White" VerticalAlignment="Top">Издатель</Label>
+                    <TextBox Grid.Row="5" x:Name="BookPublisherBox" Height="35" Width="230" VerticalContentAlignment="Center" HorizontalAlignment="Right" VerticalAlignment="Top" Margin="0,0,10,0" Text="{Binding Path=b_publisher}"/>
+                </Grid>
+
+                <Grid Grid.Column="2">
+                    <Grid.RowDefinitions>
+                        <RowDefinition></RowDefinition>
+                        <RowDefinition></RowDefinition>
+                        <RowDefinition></RowDefinition>
+                        <RowDefinition></RowDefinition>
+                        <RowDefinition></RowDefinition>
+                        <RowDefinition></RowDefinition>
+                    </Grid.RowDefinitions>
+
+                    <Label Grid.Row="0" Margin="15,0,0,0" FontSize="18" Foreground="White" VerticalAlignment="Top">ISBN</Label>
+                    <TextBox Grid.Row="0" x:Name="BookIsbnBox" Height="35" Width="230" VerticalContentAlignment="Center" HorizontalAlignment="Right" VerticalAlignment="Top" Margin="0,0,10,0" Text="{Binding Path=b_isbn}"/>
+
+                    <Label Grid.Row="1" Margin="15,0,0,0" FontSize="18" Foreground="White" VerticalAlignment="Top">Стр</Label>
+                    <TextBox Grid.Row="1" x:Name="BookPageBox" Height="35" Width="230" VerticalContentAlignment="Center" HorizontalAlignment="Right" VerticalAlignment="Top" Margin="0,0,10,0" Text="{Binding Path=b_page}"/>
+
+                    <Label Grid.Row="2" Margin="15,0,0,0" FontSize="18" Foreground="White" VerticalAlignment="Top">Цена</Label>
+                    <TextBox Grid.Row="2" x:Name="BookPriceBox" Height="35" Width="230" VerticalContentAlignment="Center" HorizontalAlignment="Right" VerticalAlignment="Top" Margin="0,0,10,0" Text="{Binding Path=b_price}"/>
+
+                    <Label Grid.Row="3" Margin="15,0,0,0" FontSize="18" Foreground="White" VerticalAlignment="Top">PDF</Label>
+                    <TextBox Grid.Row="3" x:Name="BookPdfBox" Height="35" Width="230" VerticalContentAlignment="Center" HorizontalAlignment="Right" VerticalAlignment="Top" Margin="0,0,10,0" Text="{Binding Path=b_pdf}"/>
+
+                    <Label Grid.Row="4" Margin="15,0,0,0" FontSize="18" Foreground="White" VerticalAlignment="Top">Изображение</Label>
+                    <TextBox Grid.Row="4" x:Name="BookImageBox" Height="35" Width="230" VerticalContentAlignment="Center" HorizontalAlignment="Right" VerticalAlignment="Top" Margin="0,0,10,0" Text="{Binding Path=b_img}"/>
+
+                    <DockPanel Grid.Row="5" Height="45" Width="200">
+                        <Button x:Name="BtnAddBook" Height="45" Width="70" Content="Добавить" Click="BtnAddBook_OnClick" />
+                        <Button x:Name="BtnDeleteBook" Height="45" Width="70" Content="Удалить"  HorizontalAlignment="Right" Click="BtnDeleteBook_OnClick"/>
+                    </DockPanel>
+                </Grid>
+
+
+            </Grid>
+
+        </Grid>
+
+
+    </Grid>
+</Page>

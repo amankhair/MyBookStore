@@ -1,0 +1,97 @@
+﻿<Page x:Class="MyBookStore.View.LoginForm"
+      xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+      xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+      xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+      xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+      xmlns:local="clr-namespace:MyBookStore.View"
+      mc:Ignorable="d" 
+      d:DesignHeight="650" d:DesignWidth="1150"
+      Title="LoginForm">
+
+    <Page.Resources>
+        <Style TargetType="TextBox">
+            <Setter Property="Margin" Value="25,0,0,0"/>
+            <Setter Property="Height" Value="35"/>
+            <Setter Property="Width" Value="200"/>
+            <Setter Property="TextAlignment" Value="Left"/>
+            <Setter Property="VerticalContentAlignment" Value="Center"/>
+            <Setter Property="FontSize" Value="15"/>
+            <Setter Property="Foreground" Value="#FFADADAD"/>
+            <Setter Property="BorderBrush" Value="#FFADADAD"/>
+            <Setter Property="BorderThickness" Value="0,0,0,1"/>
+            <Setter Property="Background" Value="Transparent" />
+        </Style>
+
+        <Style TargetType="PasswordBox">
+            <Setter Property="Margin" Value="25,0,0,0"/>
+            <Setter Property="Height" Value="35"/>
+            <Setter Property="Width" Value="200"/>
+            <Setter Property="VerticalContentAlignment" Value="Center"/>
+            <Setter Property="FontSize" Value="15"></Setter>
+            <Setter Property="BorderBrush" Value="#FFADADAD"/>
+            <Setter Property="Foreground" Value="#FFADADAD"/>
+            <Setter Property="BorderThickness" Value="0,0,0,1"/>
+            <Setter Property="Background" Value="Transparent" />
+        </Style>
+    </Page.Resources>
+
+    <Grid Background="White">
+        <Image Source="../Images/staff-bg.jpg"/>
+
+        <Image Source="../Images/slide-book2.png" Height="365" VerticalAlignment="Center" HorizontalAlignment="Right" Margin="0,95,75,0" />
+
+        <Grid Background="White" Height="350" Width="300" HorizontalAlignment="Left" Margin="125,95,0,0">
+            <Grid.RowDefinitions>
+                <RowDefinition Height="80"/>
+                <RowDefinition Height="80"/>
+                <RowDefinition/>
+            </Grid.RowDefinitions>
+
+            <Grid Grid.Row="0" VerticalAlignment="Bottom" HorizontalAlignment="Center">
+                <DockPanel >
+                    <Image Source="../Images/reg_user.png" Height="35"/>
+                    <TextBox x:Name="NameBox" Text="Имя" />
+                </DockPanel>
+            </Grid>
+
+            <Grid Grid.Row="1" VerticalAlignment="Bottom" HorizontalAlignment="Center">
+                <DockPanel >
+                    <Image Source="../Images/reg_pass.png" Height="35"/>
+                    <PasswordBox x:Name="PasswordBox1" Password="Password" />
+                </DockPanel>
+            </Grid>
+
+            <Button x:Name="BtnLoginForm" Grid.Row="2" Height="40" Width="120" Cursor="Hand" 
+                    HorizontalAlignment="Right"
+                    Margin="0,50,45,0"
+                    Click="BtnLoginForm_OnClick">
+                <Button.Template>
+                    <ControlTemplate>
+                        <Border x:Name="Border" CornerRadius="5" Background="#D54459">
+                            <ContentControl Content="ВОЙТИ"
+                                            VerticalAlignment="Center"
+                                            HorizontalAlignment="Center"
+                                            FontSize="15"
+                                            FontWeight="Bold"
+                                            Foreground="White"></ContentControl>
+                        </Border>
+                        <ControlTemplate.Triggers>
+                            <Trigger Property="IsMouseOver" Value="True">
+                                <Setter TargetName="Border" Property="Background" Value="#9A3B49" />
+                            </Trigger>
+                        </ControlTemplate.Triggers>
+                    </ControlTemplate>
+                </Button.Template>
+            </Button>
+
+            <Border Grid.Row="2" BorderBrush="#FFADADAD" BorderThickness="0,0,0,1"></Border>
+        </Grid>
+
+
+        <Grid x:Name="ShowBox" HorizontalAlignment="Center" VerticalAlignment="Center">
+            <Border x:Name="ShowBorder" CornerRadius="7">
+                <Label x:Name="ShowLabel"></Label>
+            </Border>
+        </Grid>
+    </Grid>
+</Page>

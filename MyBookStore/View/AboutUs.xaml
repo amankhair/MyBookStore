@@ -1,0 +1,29 @@
+﻿<Page x:Class="MyBookStore.View.AboutUs"
+      xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+      xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+      xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+      xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+      xmlns:local="clr-namespace:MyBookStore.View"
+      mc:Ignorable="d" 
+      d:DesignHeight="650" d:DesignWidth="1150"
+      Title="AboutUs">
+
+    <Grid>
+        <Grid Background="White">
+            <Image Source="../Images/slider3.jpg"/>
+
+            <Grid Height="490" Width="500" HorizontalAlignment="Left" Margin="55,0,0,0">
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="70"/>
+                    <RowDefinition></RowDefinition>
+                </Grid.RowDefinitions>
+
+                <Label Grid.Row="0" Content="О Нас" VerticalAlignment="Center" HorizontalAlignment="Center" FontSize="35"/>
+                <TextBlock Grid.Row="1" Margin="25,35,25,25" TextWrapping="Wrap" FontSize="20" >
+                    «Книжная полка» является самым крупным в Алматы книжным магазином, в котором представлено около 80 000 наименований книг. Большое внимание в ассортименте уделяется детской литературе и развивающим играм для детей. Гордостью магазина является отдел подарочных и эксклюзивных изданий – уникальных книг, выпущенных ограниченным тиражом. В ассортименте имеются также и сопутствующие товары, в числе которых аудиокниги, пазлы, открытки,  закладки, периодические и картографические издания, сувениры.
+                </TextBlock>
+            </Grid>
+
+        </Grid>
+    </Grid>
+</Page>

@@ -1,0 +1,56 @@
+﻿<Page x:Class="MyBookStore.View.AdministratorPanel"
+      xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+      xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+      xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+      xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+      xmlns:local="clr-namespace:MyBookStore.View"
+      mc:Ignorable="d" 
+      d:DesignHeight="650" d:DesignWidth="1150"
+      Title="AdministratorPanel">
+
+    <Grid Background="White">
+        <Grid>
+            <Grid.RowDefinitions>
+                <RowDefinition Height="30"></RowDefinition>
+                <RowDefinition></RowDefinition>
+            </Grid.RowDefinitions>
+
+            <DockPanel Grid.Row="0" x:Name="DockPanelMenu">
+                <Menu DockPanel.Dock="Top">
+                    <MenuItem Header="BookTable" FontSize="15" Height="30" Width="90">
+                        <MenuItem Header="PrintBookTable"
+                                  x:Name="PrintBookTable"
+                                  Click="PrintBookTable_OnClick"/>
+                        <MenuItem Header="AddNewBook"
+                                  x:Name="AddNewBook"
+                                  Click="AddNewBook_OnClick"></MenuItem>
+                    </MenuItem>
+                    <MenuItem Header="CategoryTable" FontSize="15" Height="30" Width="120">
+                        <MenuItem Header="PrintCategoryTable"
+                                  x:Name="PrintCategoryTable"
+                                  Click="PrintCategoryTable_OnClick"/>
+                    </MenuItem>
+                    <MenuItem Header="ContactTable" FontSize="15" Height="30" Width="120">
+                        <MenuItem Header="PrintContactTable"
+                                  x:Name="PrintContactTable"
+                                  Click="PrintContactTable_OnClick"/>
+                    </MenuItem>
+                    <MenuItem Header="SubcatTable" FontSize="15" Height="30" Width="120">
+                        <MenuItem Header="PrintSubcatTable"
+                                  x:Name="PrintSubcatTable"
+                                  Click="PrintSubcatTable_OnClick"/>
+                    </MenuItem>
+                    <MenuItem Header="UserTable" x:Name="UserMenu" FontSize="15" Height="30" Width="120">
+                        <MenuItem Header="PrintUserTable"
+                                  x:Name="PrintUserTable"
+                                  Click="PrintUserTable_OnClick"/>
+                    </MenuItem>
+                </Menu>
+            </DockPanel>
+
+
+            <Frame Grid.Row="1" x:Name="TableFrame"></Frame>
+
+        </Grid>
+    </Grid>
+</Page>

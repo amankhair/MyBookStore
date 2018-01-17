@@ -1,0 +1,22 @@
+﻿<Page x:Class="MyBookStore.View.UserProfile"
+      xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+      xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+      xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+      xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+      xmlns:local="clr-namespace:MyBookStore.View"
+      mc:Ignorable="d" 
+      d:DesignHeight="650" d:DesignWidth="1150"
+      Title="UserProfile">
+
+    <Page.Resources>
+        <ControlTemplate TargetType="Button" x:Key="BtnTemplate">
+            <Border x:Name="Border" CornerRadius="5" Height="35" Background="#34495E" Margin="15,10,15,10">
+                <ContentControl x:Name="BtnContent" Foreground="White"
+                                Content="{TemplateBinding Content}"
+                                VerticalAlignment="Center"
+                                HorizontalAlignment="Center"
+                                FontSize="15"></ContentControl>
+            </Border>
+        </ControlTemplate>
+    </Page.Resources>
+</Page>
